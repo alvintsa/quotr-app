@@ -10,8 +10,8 @@ function QuoteGen() {
     return (
         <div className = "quote_container">
             <img src = "/images/image1.png" alt = "Centered Image"/>
-            <h1>PENIS</h1>
-            <p>whatcock</p>
+            <h1>test</h1>
+            <p>test</p>
             <div className = "quote_btns">
                 <Button className = "btns" buttonStyle = "btn--outline"
                 buttonSize = "btn--large">GET STARTED
