@@ -5,9 +5,31 @@ img {
     z-index: -1;
 }
 
+.sparkle_welcome {
+	font-style: italic;
+	background: linear-gradient(-45deg, #f06, #09f, #f06);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: textSparkle 19s linear infinite;
+}
+
+@keyframes textSparkle {
+    0%, 100% { /*0% is  Initial styles */   /* 50% is Intermediate styles */
+        background-position: 0% 30%;
+    }
+    50% { /* Final styles */
+        background-position: 100% 50%;
+    }
+}
+
+.grab_quote {
+    font-weight: bold;
+}
+
 .quote_container {
-    background: url("../../public/images/image3.png") center center/cover
-    no-repeat;
+    /* background: url("../../public/images/image3.png") center center/cover
+    no-repeat; */
     /* height: 100vh; */
     width: 100%;
     display: flex;
