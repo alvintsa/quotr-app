@@ -7,6 +7,8 @@ img {
 
 .sparkle_welcome {
 	font-style: italic;
+    font-size: 55px;
+    font-family: "Zeyada", cursive;
 	background: linear-gradient(-45deg, #f06, #09f, #f06);
     background-size: 400% 400%;
     -webkit-background-clip: text;
