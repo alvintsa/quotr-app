@@ -61,7 +61,7 @@ it from whatever it was to whatever you want to change it to */}
                             </Link>
                         </li>
                         <li className = "nav_item"> {/* MENU OPTIONS U CAN CLICK */}
-                            <Link to = "/submit" className = "nav_links" onClick = {closeMobileMenu}>
+                            <Link to = "/submission" className = "nav_links" onClick = {closeMobileMenu}>
                                 Quote Submission
                             </Link>
                         </li>
