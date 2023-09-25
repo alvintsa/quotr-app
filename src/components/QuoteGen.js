@@ -15,19 +15,23 @@ function QuoteGen() {
         </div>
 
         <div className = "quote_container">
+            <body name = "quote_content"> "Quote goes here'" <br></br>- Author goes here</body>
+
             {/* <img src = "/images/image1.png" alt = "Centered Image"/> */}
             {/* <h1>test</h1>
             <p>test</p> */}
             <div className = "quote_btns">
+                
                 {/* <Button className = "btns" buttonStyle = "btn--outline"
                 buttonSize = "btn--large">GET STARTED
                 </Button> */}
-                {/* <Button className = "btns" buttonStyle = "btn--outline"
+                {/*custom 'Button' class or 'Button' React Element from Button.js, buttonStyle is
+                 also a custom element so cool!*/}
+                <Button className = "btns" buttonStyle = "btn--outline"
                 buttonSize = "btn--large">GENERATE QUOTE!
                 <i className = "far fa-play-circle"/>
-                </Button> */}
+                </Button>
             </div>
-        
         
         </div>
     </div>

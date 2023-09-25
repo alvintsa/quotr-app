@@ -1,0 +1,67 @@
+
+.log_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+
+.form_box {
+    
+    text-align: center;
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    background: rgb(255, 255, 255);
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: 30px 30px #000000;
+}
+
+
+
+.form_container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 400px;
+   
+}
+
+.input_container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 50%;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+}
+
+button[type="submit"] {
+    width: 50%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #3a9cd0, #be12b0);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
