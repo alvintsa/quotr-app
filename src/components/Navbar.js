@@ -51,6 +51,11 @@ it from whatever it was to whatever you want to change it to */}
                     */}
                         {/* li means list item */}
                         <li className = "nav_item"> {/* MENU OPTIONS U CAN CLICK */}
+                            <Link to = "/profile" className = "nav_links" onClick = {closeMobileMenu}>
+                                My Quotes
+                            </Link>
+                        </li>
+                        <li className = "nav_item"> {/* MENU OPTIONS U CAN CLICK */}
                             <Link to = "/register" className = "nav_links" onClick = {closeMobileMenu}>
                                 Register
                             </Link>
@@ -71,7 +76,7 @@ it from whatever it was to whatever you want to change it to */}
                             </Link>
                         </li>
                     </ul>
-                    {button && <Button buttonStyle = "btn--outline">Register</Button>}
+                   {/* {button && <Button buttonStyle = "btn--outline">Register</Button>}*/}
 
                 </div>
             </nav>
