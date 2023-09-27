@@ -13,63 +13,43 @@ function QuoteGen() {
 
     const api_url = "https://zenquotes.io/api/quotes/";
 
-    const [quoteData, setQuoteData] = useState({});
-
-    // const axios = require('axios');
-
-    const [quotes, setQuotes] = useState(null);
+    const [quotes, set_quotes] = useState(null);
     const category = 'inspirational';
-    const apiKey = "HT/Rxb49uwcMk9yxRAThgA==CHd6J1z35XpE6eou"; // Replace with your actual API key
-    const requestInterval = 1000; // Set your desired request interval (e.g., 1 second)
+    const apikey = "HT/Rxb49uwcMk9yxRAThgA==CHd6J1z35XpE6eou"; // Replace with your actual API key
+    const request_interval = 1000; // Set your desired request interval (e.g., 1 second)
+    const handle_click = () => {
+        alert("Button Clicked");
+    }
   
-    const fetchData = async () => {
+    const get_data = async () => {
       try {
         const response = await axios.get(`https://api.api-ninjas.com/v1/quotes?category=${category}`, {
           headers: {
-            'X-Api-Key': apiKey,
+            'X-Api-Key': apikey,
           },
         });
   
         if (response.status === 200) {
-          setQuotes(response.data[0]);
+          set_quotes(response.data[0]);
         }
       } catch (error) {
         console.error('Error fetching quotes:', error);
       }
     };
   
-    useEffect(() => {
-      // Initially fetch data
-      fetchData();
-  
-      // Set up an interval to fetch data periodically within the rate limit
-      const intervalId = setInterval(() => {
-        fetchData();
-      }, requestInterval);
-  
-      return () => {
-        // Clear the interval when the component unmounts
-        clearInterval(intervalId);
-      };
-    }, []);
-
-  
     // useEffect(() => {
-    //   async function fetchQuote() {
-    //     try {
-    //       const response = await fetch(api_url);
-    //       if (!response.ok) {
-    //         throw new Error("Did not receive a response");
-    //       }
-    //       const data = await response.json();
-    //       console.log(data);
-    //       setQuoteData(data[1]); // Assuming the API returns an array of quotes, we take the first one here
-    //     } catch (error) {
-    //       console.error("Error fetching data:", error);
-    //     }
-    //   }
+    //   // Initially fetch data
+    //   get_data();
   
-    //   fetchQuote();
+    //   // Set up an interval to fetch data periodically within the rate limit
+    //   const interval_time = setInterval(() => {
+    //     get_data();
+    //   }, request_interval);
+  
+    //   return () => {
+    //     // Clear the interval when the component unmounts
+    //     clearInterval(interval_time);
+    //   };
     // }, []);
 
     return (
@@ -89,29 +69,31 @@ function QuoteGen() {
             </div>
             )}
 
-            "Quote goes here'" <br></br>- Author goes here</div>
+            {/*"Quote goes here'" <br></br>- Author goes here*/}
+            </div>
 
    
-            {/*{quotes.map((quote, index) => (
-            <li key={index}>{quote.quote}</li>
-            ))}*/}
    
        
 
             {/* <img src = "/images/image1.png" alt = "Centered Image"/> */}
             {/* <h1>test</h1>
             <p>test</p> */}
-            <div className = "quote_btns">
+            {/*<div className = "quote_btns">
                 
-                {/* <Button className = "btns" buttonStyle = "btn--outline"
+                <Button className = "btns" buttonStyle = "btn--outline"
                 buttonSize = "btn--large">GET STARTED
-                </Button> */}
-                {/*custom 'Button' class or 'Button' React Element from Button.js, buttonStyle is
-                 also a custom element so cool!*/}
+                </Button>
+                custom 'Button' class or 'Button' React Element from Button.js, buttonStyle is
+                 also a custom element so cool!
                 <Button className = "btns" buttonStyle = "btn--outline"
                 buttonSize = "btn--large">GENERATE QUOTE!
                 <i className = "far fa-play-circle"/>
-                </Button>
+        </Button>
+        </div>*/}
+
+            <div className = "quote_button">
+                <button onClick={get_data}>Generate a quote!</button>
             </div>
         
         </div>
