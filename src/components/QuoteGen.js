@@ -37,20 +37,20 @@ function QuoteGen() {
       }
     };
   
-    useEffect(() => {
-      // Initially fetch data
-      get_data();
+    // useEffect(() => {
+    //   // Initially fetch data
+    //   get_data();
   
-      // Set up an interval to fetch data periodically within the rate limit
-      const interval_time = setInterval(() => {
-        get_data();
-      }, request_interval);
+    //   // Set up an interval to fetch data periodically within the rate limit
+    //   const interval_time = setInterval(() => {
+    //     get_data();
+    //   }, request_interval);
   
-      return () => {
-        // Clear the interval when the component unmounts
-        clearInterval(interval_time);
-      };
-    }, []);
+    //   return () => {
+    //     // Clear the interval when the component unmounts
+    //     clearInterval(interval_time);
+    //   };
+    // }, []);
 
     return (
     <div className = "containers"> {/* react uses className, while regular html uses class*/}
@@ -69,12 +69,10 @@ function QuoteGen() {
             </div>
             )}
 
-            "Quote goes here'" <br></br>- Author goes here</div>
+            {/*"Quote goes here'" <br></br>- Author goes here*/}
+            </div>
 
    
-            {/*{quotes.map((quote, index) => (
-            <li key={index}>{quote.quote}</li>
-            ))}*/}
    
        
 
@@ -93,9 +91,9 @@ function QuoteGen() {
                 <i className = "far fa-play-circle"/>
         </Button>
         </div>*/}
-        
+
             <div className = "quote_button">
-                <button onClick={handle_click}>Generate a quote!</button>
+                <button onClick={get_data}>Generate a quote!</button>
             </div>
         
         </div>
