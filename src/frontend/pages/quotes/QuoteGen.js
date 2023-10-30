@@ -1,6 +1,6 @@
 import "../App.css";
 import "./QuoteGen.css";
-import { Button } from "./Button";
+import { Button } from "../components/Button";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
