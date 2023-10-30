@@ -1,12 +1,12 @@
 import React from "react";
 import './App.css';
-import Navbar from "./components/Navbar";
+import Navbar from "./frontend/components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/pages/Home";
-import Register from "./components/pages/Register";
-import Leaderboard from "./components/pages/Leaderboard";
-import Submission from "./components/pages/Submission";
-import Profile from "./components/pages/Profile";
+import Home from "./Home";
+import Register from "./frontend/pages/user/Register";
+import Leaderboard from "./frontend/pages/leaderboard/Leaderboard";
+import Submission from "./frontend/pages/quotes/Submission";
+import Profile from "./frontend/pages/user/Profile";
 
 function App() {
   return (

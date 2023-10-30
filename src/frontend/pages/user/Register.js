@@ -1,7 +1,6 @@
-import "../../App.css";
+import "../../../App.css";
 import React from "react";
 import "./Register.css"
-import QuoteGen from "../QuoteGen";
 
 function Register () {
     return (
