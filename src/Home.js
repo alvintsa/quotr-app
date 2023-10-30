@@ -1,6 +1,6 @@
-import "../../App.css";
+import "./App.css";
 import React from "react";
-import QuoteGen from "../QuoteGen";
+import QuoteGen from "./frontend/pages/quotes/QuoteGen";
 
 function Home () {
     return (
