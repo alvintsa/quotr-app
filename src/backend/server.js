@@ -15,6 +15,49 @@ app.get('/api/data', (req, res) => {
   
 });
 
+app.get('/api/register', (req, res) => {
+    console.log("reached");
+    res.json(data);
+  
+});
+
+app.get('/api/login', (req, res) => {
+    console.log("reached");
+    res.json(data);
+  
+});
+
+app.get('/api/profile', (req, res) => {
+    console.log("reached");
+    res.json(data);
+  
+});
+
+app.get('/api/leaderboard', (req, res) => {
+    console.log("reached");
+    res.json(data);
+  
+});
+
+app.get('/api/submit', (req, res) => {
+    console.log("reached");
+    res.json(data);
+  
+});
+
+app.get('/api/vote', (req, res) => {
+    console.log("reached");
+    res.json(data);
+  
+});
+
+app.get('/api/collections', (req, res) => { // admin mess with db collections
+    console.log("reached");
+    res.json(data);
+  
+});
+
+
 // Endpoint to add data
 app.post('/api/data', (req, res) => {
 
@@ -23,7 +66,7 @@ app.post('/api/data', (req, res) => {
     res.json({ message: 'Data added', newItem });
 });
 
-const port = 5001;
+const port = 9000;
 app.listen(port, () => {
     
     console.log(`Server running on port ${port}`);

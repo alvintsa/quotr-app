@@ -10,7 +10,6 @@ import Profile from "./frontend/pages/user/Profile";
 
 function App() {
 
-
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -19,7 +18,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:5001/api/data');
+      const response = await fetch('http://localhost:9000/api/data');
       const result = await response.json();
       setData(result);
     } catch (error) {
@@ -29,14 +28,19 @@ function App() {
 
   return (
     <>
-
       <div className="App">
-            {data ? (
-              <div>Data: {JSON.stringify(data)}</div>
-            ) : (
-              <div>Loading...</div>
-            )}
+        {data && (
+          <div>
+            Data: {JSON.stringify(data)}
           </div>
+        )}
+        {!data && (
+          <div>
+            Loading...
+          </div>
+        )}
+      </div>
+
       <Router> {/* Home Page */}
         <Navbar /> 
         <Routes> 
