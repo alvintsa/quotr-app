@@ -18,7 +18,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:9000/api/data');
+      const response = await fetch('http://localhost:8080/api/data');
       const result = await response.json();
       setData(result);
     } catch (error) {

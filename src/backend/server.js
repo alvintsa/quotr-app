@@ -1,9 +1,12 @@
 const { asyncHandler } = require("./errors/asyncHandler");
 const { errorHandler } = require("./errors/errorHandler");
+const { registerUser } = require("./users/userCtrl.js");
 
 
 const express = require('express');
 const app = express();
+const router = express.Router;
+
 app.use(express.json());
 
 // Sample data stored in memory (you might use a database in a real application)
@@ -13,65 +16,58 @@ let data = [
 ];
 
 // Endpoint to get all data
-app.get('/api/data', (req, res) => {
-    console.log("reached");
-    res.json(data);
+router.use((req, res, next) => {
+    console.log("Request received:", req.method, req.url);
+    next();
+  });
   
-});
-
-app.get('/api/register', (req, res) => {
-    console.log("reached");
-    res.json(data);
+  router.get('/api/data', (req, res) => {
+      console.log("reached");
+      res.json(data);
+  });
   
-});
-
-app.get('/api/login', (req, res) => {
-    console.log("reached");
-    res.json(data);
+  router.get('/api/register', asyncHandler(registerUser));
   
-});
-
-app.get('/api/profile', (req, res) => {
-    console.log("reached");
-    res.json(data);
+  router.get('/api/login', (req, res) => {
+      console.log("reached");
+      res.json(data);
+  });
   
-});
-
-app.get('/api/leaderboard', (req, res) => {
-    console.log("reached");
-    res.json(data);
+  router.get('/api/profile', (req, res) => {
+      console.log("reached");
+      res.json(data);
+  });
   
-});
-
-app.get('/api/submit', (req, res) => {
-    console.log("reached");
-    res.json(data);
+  router.get('/api/leaderboard', (req, res) => {
+      console.log("reached");
+      res.json(data);
+  });
   
-});
-
-app.get('/api/vote', (req, res) => {
-    console.log("reached");
-    res.json(data);
+  router.get('/api/submit', (req, res) => {
+      console.log("reached");
+      res.json(data);
+  });
   
-});
-
-app.get('/api/collections', (req, res) => { // admin mess with db collections
-    console.log("reached");
-    res.json(data);
+  router.get('/api/vote', (req, res) => {
+      console.log("reached");
+      res.json(data);
+  });
   
-});
-
-
-// Endpoint to add data
-app.post('/api/data', (req, res) => {
-
-    const newItem = req.body; // Assumes the request sends an object in the body
-    data.push(newItem);
-    res.json({ message: 'Data added', newItem });
-});
-
-const port = 9000;
-app.listen(port, () => {
-    
-    console.log(`Server running on port ${port}`);
-});
+  router.get('/api/collections', (req, res) => { // admin messes with db collections
+      console.log("reached");
+      res.json(data);
+  });
+  
+  // Endpoint to add data
+  router.post('/api/data', (req, res) => {
+      const newItem = req.body; // Assumes the request sends an object in the body
+      data.push(newItem);
+      res.json({ message: 'Data added', newItem });
+  });
+  
+  const port = 8080;
+  router.listen(port, () => { // Changed from app.listen to router.listen
+      console.log(`Server running on port ${port}`);
+  });
+  
+  export default router;
